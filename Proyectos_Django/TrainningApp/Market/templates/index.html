@@ -1,0 +1,326 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="author" content="Amardeep Kesharwani" />
+<title>Solo Market </title>
+<link href="../../static/style.css" rel="stylesheet" type ="text/css">
+<link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<!--
+ app name :  Market,
+ create by : Elkin Riascos,
+ date : 17/12/2020,
+-->
+<section class="sec1">
+<nav>
+ <a href="#" >Market</a>
+ <div class="bar" >
+  <span></span>
+  <span></span>
+  <span></span>
+ </div>
+</nav>
+<header>
+ <div>
+  <h3>Buy New Trending Cool Dresses </h3>
+  <button class="signin" >Sign In</button>
+</header>
+<h2 class="title" >Our Products</h2>
+<div class="product-list container" >
+</div>
+<div class="copyright" >
+  <small> copyright &copy; Market, created by Elkin Riascos </small>
+</div>
+</section>
+<section class="sec2 hide">
+<div class="flex" >
+ <div>
+ <span class="discount dis" ></span>
+ <img class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR7DmTxaw0ItozmAcoGcljX74JoVM37oSO8WA&usqp=CAU" alt="" >
+ <div class="container" >
+   <h2 class="pro-name" >Women Black Top</h2>
+   <h1 class="price" >Cop. 999</h1>
+   <p class="description" > product description black white top</p>
+ </div>
+ </div>
+ <div class="btn-group" >
+  <button class="cancel" >Cancel</button>
+  <button class="buy" >Buy Now</button>
+ </div>
+</div>
+</section>
+<section class="sec3 hide">
+  <div class="container" >
+   <button class="close" >
+     &times;
+   </button>
+    <h2 class="title" >User Details</h2>
+    <form id="form">
+      <div class="form-group" >
+        <label>Full Name</label>
+        <input type="text" id="name" placeholder="Full Name*" required>
+      </div>
+      <div class="form-group" >
+      <label>Mobile No</label>
+      <input type="number" id="number" placeholder="Mobile No*" required>
+      </div>
+      <div class="form-group" >
+       <label>Full Address</label>
+       <textarea id="address" placeholder="Full Address*" required></textarea>
+      </div>
+      <div class="form-group">
+        <button class="s-btn">Submit</button>
+      </div>
+    </form>
+  </div>
+</section>
+<section class="sec4 hide">
+  <div class="container" >
+    <h3>User Details</h3>
+    <div class="card" >
+     <p><b>Name : </b> <span class="u-name" >Cesar Elkin Riascos Buesaquillo</span></p>
+     <p><b>Number : </b><span class="u-number" > 738383848</span></p>
+     <p><b>Address : </b><span class="u-address" >elkin_9078@gmail.com</span></p>
+     <p><b>payment method : </b> Cash on delivery</p>
+     <p><b>deliver : </b> 3-4 days</p>
+    </div>
+    <h3>Product Details</h3>
+    <div class="card flex" >
+       <img class="d-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR7DmTxaw0ItozmAcoGcljX74JoVM37oSO8WA&usqp=CAU" alt="" >
+       <div>
+       <p><b>Name : </b> <span class="d-name" ></span></p>
+       <p><b>Total Price : </b><span class="d-price" ></span></p>
+       <p><b>delivery charges : </b>Free</p>
+       </div>
+    </div>
+    <h3>process to checkout</h3>
+    <button class="checkout" >Checkout</button>
+  </div>
+</section>
+<section class="sec5 hide" >
+ <div class="flex" >
+  <div class="thanks" >
+    <h1>Thank You</h1> 
+    <p>Your Order Successfully</p>
+    <p><span class="user-name" ></span> thank you for purchasing this product</p>
+    <button class="home" >Home</button>
+  </div>
+ </div>
+</section>
+<section class="sec6 container hide" >
+  <button class="close-sec6" >
+    &times;
+  </button>
+  <div class="sec-title" >
+     <h2>Best  Coders </h2>
+     <small>(Universidad CESMAG)</small>
+  </div>
+  <div class="cart-list">
+  </div>
+  <div class="copyright" >
+    <small>sorry guys, I'm not mention all coder , but all code is very well & best</small>
+  </div>
+</section>
+<!-- script -->
+<!-- Elkin Riascos -->
+<script>
+const products = [
+ {
+  id:1,
+  name:"Woman Black Top",
+  price: 999,
+  discount:28,
+  image:"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR7DmTxaw0ItozmAcoGcljX74JoVM37oSO8WA&usqp=CAU",
+  description:"Miss Chase Women's Black Round Neck Choker Style"
+ },
+ {
+  id:2,
+  name:"Short Kurti",
+  price: 699,
+  discount:14,
+  image:"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQJbfnMjtgnGjkVc-S8Rp0-fjvcuDFZJxFEVQ&usqp=CAU",
+  description:"R.R. Unique Associates Short Kurti for Women and Girls Rayon"
+ },
+ {
+  id:3,
+  name:"Plain Red Top",
+  price: 499,
+  discount:39,
+  image:"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQVkvGQjhLVUqwy8ljM-4cG5uEa-MnRPIEZAw&usqp=CAU",
+  description:"DHRUVI TRENDZ Women's Plain Regular fit Top"
+ },
+ {
+  id:4,
+  name:"Pretty short frock",
+  price: 749,
+  discount:26,
+  image:"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRzUaEJHGPUsiFnuv3um3peZo-z45GmN91-lA&usqp=CAU",
+  description:"PURVAJA Women's Skater Knee-Length Dress"
+ },
+ {
+  id:5,
+  name:"pink top",
+  price: 599,
+  discount:36,
+  image:"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQDgTjY8Kz2PkcOavIOXh9BaW-qLzy9kouZFA&usqp=CAU",
+  description:"GSA MALL G S A Enterprises NewTrend Cotton Lycra Dungaree Skirt for Women"
+ },
+ {
+  id:6,
+  name:"black short top",
+  price: 949,
+  discount:10,
+  image:"https://img-static.tradesy.com/item/20079121/free-people-black-xs-teen-witch-corded-lace-fit-flare-cut-out-above-knee-short-casual-dress-size-2-x-7-0-960-960.jpg",
+  description:"Miss Chase Women's Green High Neck Pleated Top"
+ },
+ {
+  id:7,
+  name:"Woman plain T-shirt",
+  price:399,
+  discount:18,
+  image:"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSlkoSBVAP1Fa3ILFAZLuRus3tP8aUqY0iCMQ&usqp=CAU",
+  description:"casual wear plain regular t-shirt ",
+ },
+ {
+ id:8,
+ name:"Plain Blue Shirt",
+ price:499,
+ discount:46,
+ image:"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTu-2pEOmvTIqQ9d04lJukEWRbXARElQTmQQg&usqp=CAU",
+ description:"casual wear plain Blue regular shirt ",
+ }
+]
+const coders = [
+ {
+  name:"Cesar Elkin Riascos Buesaquillo",
+  avtar:"https://scontent.fbog16-1.fna.fbcdn.net/v/t1.0-9/94485995_2535454066704865_5502042110506827776_o.jpg?_nc_cat=110&ccb=2&_nc_sid=09cbfe&_nc_ohc=1o-KQRmARLYAX_oR4Bp&_nc_ht=scontent.fbog16-1.fna&oh=ea002cf079512c944695446f2326f2d8&oe=5FFFEE0D",
+  url:"https://github.com/iAmMe340/Frameworks-7a-2020b", 
+ }
+ 
+]
+let product = {};
+let name, number, email;
+
+$(window).on('load',function(){
+ setData();
+})
+$(document).ready(function(){
+ $(".view").click(function(e){
+  const id = e.target.getAttribute("data-id");
+  product = products.find(p => p.id == id);
+  $(".sec1").hide();
+  $(".sec2").fadeIn();
+  $(".img").attr("src", product.image);
+  $(".dis").text(product.discount +"% off")
+  $(".pro-name").text(product.name);
+  $(".price").text("Rs. "+product.price);
+  $(".description").text(product.description)
+ });
+ $(".buy-now").click(function(e){
+  const id = e.target.getAttribute("data-id");
+  product = products.find(p => p.id == id);
+  $(".sec1").hide();
+  $(".sec3").fadeIn();
+ });
+ $(".signin").click(function(){
+  $(".sec1").hide();
+  $(".sec3").fadeIn();
+ });
+ $(".cancel").click(function(){
+  $(".sec2").hide();
+  $(".sec1").fadeIn();
+ });
+ $(".buy").click(function(){
+  $(".sec2").hide();
+  $(".sec3").fadeIn();
+ });
+ $(".close").click(function(){
+  $(".sec3").hide();
+  $(".sec1").fadeIn();
+ });
+ $(".close-sec6").click(function(){
+   $(".sec6").hide();
+   $(".sec1").fadeIn();
+ });
+ $(".bar").click(function(){
+  $(".sec1").hide();
+  $(".sec6").fadeIn();
+ });
+ $("#form").submit(function(e){
+   e.preventDefault();
+   name = $("#name").val();
+   number = $("#number").val();
+   address = $("#address").val();
+   $(".sec3").hide();
+   if(!product.name) {
+   $(".sec1").fadeIn();
+    return; 
+   }
+   $(".sec4").fadeIn();
+   $(".u-name").text(name);
+   $(".u-number").text(number);
+   $(".u-address").text(address);
+   
+   $(".d-img").attr("src", product.image);
+   $(".d-name").text(product.name);
+   $(".d-price").text("Rs."+product.price);
+   
+ });
+ 
+ $(".checkout").click(function(){
+  $(".sec4").hide();
+  $(".sec5").fadeIn();
+  $(".user-name").text(name);
+ });
+ $(".home").click(function(){
+   $(".sec5").hide();
+   $(".sec1").fadeIn();
+   product = {};
+ });
+})
+
+function addProduct(data) {
+ const div = `
+  <div class="product">
+  <img src="${data.image}" alt="" >
+  <div class="product-details" >
+  <p>${data.name}</p>
+  <h4>Rs. ${data.price} <del>${Math.floor(data.price * 100 / (100 - data.discount))}</del></h4>
+  <span class="discount">${data.discount}% off</span>
+  </div>
+   <div class="views" >
+    <button class="view" data-id="${data.id}">View</button>
+    <button class="buy-now" data-id="${data.id}">Buy</button>
+   </div>
+  </div>
+ `;
+ $(".product-list").append(div);
+}
+
+function setProduct(){
+ products.forEach(product => addProduct(product))
+}
+setProduct()
+
+function addCoder(coder) {
+ let div = ` <div class="cart">
+    <div class="cart-img">
+    <img src="${coder.avtar}" alt="">
+   </div>
+    <h1>${coder.name}</h1>
+    <a href="${coder.url}" target="_blank" >View Profile</a>
+  </div>
+ `;
+ $(".cart-list").append(div);
+}
+function setData(){
+ coders.forEach(coder => addCoder(coder))
+}
+</script>
+</body>
+</html>
