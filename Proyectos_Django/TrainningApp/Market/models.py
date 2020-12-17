@@ -14,7 +14,6 @@ class Vendor (models.Model):
     status = models.BooleanField(default=True)
     description= models.TextField(default='Description here')
 
-
 class Products(models.Model):
     code = models.CharField(max_length=1000)
     name = models.CharField(max_length=100)

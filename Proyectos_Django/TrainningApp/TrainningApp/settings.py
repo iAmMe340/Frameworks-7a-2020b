@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'Market.apps.MarketConfig',
+    'Warehouse.apps.WarehouseConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -86,10 +88,37 @@ DATABASES = {
         'PASSWORD' : 'elkinr340',
         'HOST'     : 'localhost',
         'PORT'     : '5431',
+    },
+
+       'Market': {
+        
+        'ENGINE'   : 'django.db.backends.postgresql_psycopg2',
+        'NAME'     : 'Market',
+        'USER'     : 'postgres',
+        'PASSWORD' : 'elkinr340',
+        'HOST'     : 'localhost',
+        'PORT'     : '5431',
+    },
+
+       'Warehouse': {
+        
+        'ENGINE'   : 'django.db.backends.postgresql_psycopg2',
+        'NAME'     : 'Warehouse',
+        'USER'     : 'postgres',
+        'PASSWORD' : 'elkinr340',
+        'HOST'     : 'localhost',
+        'PORT'     : '5431',
     }
 
 
 }
+
+DATABASES_URLS = [
+    'Market.routers.MarketRouter',
+    'Warehouse.routers.WarehouseRouter'
+]
+
+
 
 
 # Password validation
