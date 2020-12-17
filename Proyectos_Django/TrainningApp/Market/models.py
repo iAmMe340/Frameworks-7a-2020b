@@ -8,9 +8,6 @@ class Category(models.Model) :
     create_date = models.DateTimeField('Date creation')
     update_date = models.DateTimeField('Date update')
 
-    def __str__(self):
-        return self.name, self.code
-
 class Vendor (models.Model):
     code = models.CharField(max_length=1000)
     name = models.CharField(max_length=100)
