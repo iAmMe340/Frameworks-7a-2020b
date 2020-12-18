@@ -4,6 +4,6 @@ deploy:
 
   app: trainingapp
 
-  api_key:
+  api_key: 6158d3b3-18e2-4238-8617-17592d9c8be5
 
     secure: $HEROKU_API_KEY
