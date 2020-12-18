@@ -1,0 +1,1 @@
+web : gunicorn TrainningApp.wsgi --log-file -

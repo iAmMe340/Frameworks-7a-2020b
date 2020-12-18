@@ -1,0 +1,9 @@
+deploy:
+
+  provider: heroku
+
+  app: trainingapp
+
+  api_key:
+
+    secure: $HEROKU_API_KEY
